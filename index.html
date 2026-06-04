@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Sofia & Leonardo — Ci sposiamo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F1E6;
+    --paper-2:#E8E7D5;
+    --ink:#1B3326;          /* verde bosco profondo */
+    --ink-soft:#566355;
+    --green:#4F8B3A;        /* verde foglia accento */
+    --green-bright:#6FAE49;
+    --line:#D2CFBA;
+    --display:'Fraunces',Georgia,serif;
+    --body:'Jost',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-weight:300;line-height:1.7;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--green);color:var(--paper)}
+
+  /* ---------- decorative tokens ---------- */
+  .dots{display:inline-flex;gap:6px;align-items:center;justify-content:center}
+  .dots span{width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .dots span:nth-child(2){background:var(--green-bright)}
+  .dots span:nth-child(3){background:var(--ink);opacity:.5}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.4rem clamp(1.2rem,5vw,4rem);mix-blend-mode:difference;
+  }
+  nav .brand{font-family:var(--display);font-style:italic;font-size:1.2rem;color:#fff;letter-spacing:.02em}
+  nav .links{display:flex;gap:2rem;list-style:none}
+  nav .links a{color:#fff;text-decoration:none;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;opacity:.85;transition:opacity .3s}
+  nav .links a:hover{opacity:.4}
+  @media(max-width:760px){nav .links{display:none}}
+
+  /* ---------- HERO ---------- */
+  header{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:6rem 1.5rem 3rem;position:relative;
+    background:radial-gradient(120% 80% at 50% -10%, var(--paper-2), transparent 60%),var(--paper);
+  }
+  .overline{font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:var(--green);margin-bottom:2rem}
+  .names{font-family:var(--display);font-weight:300;font-size:clamp(2.9rem,11vw,8.4rem);line-height:.94;letter-spacing:-.01em}
+  .names .amp{font-style:italic;color:var(--green);display:block;font-size:.5em;margin:.12em 0}
+  .meta{margin-top:2.2rem;font-size:clamp(.82rem,2.4vw,1.02rem);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
+  .tema{margin-top:1.4rem;font-family:var(--display);font-style:italic;font-size:clamp(1rem,3vw,1.3rem);color:var(--ink)}
+  .tema small{display:block;font-family:var(--body);font-style:normal;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.5rem}
+  .countdown{display:flex;gap:clamp(1.2rem,5vw,3.2rem);justify-content:center;margin-top:2.6rem}
+  .countdown div{text-align:center}
+  .countdown .num{font-family:var(--display);font-size:clamp(1.6rem,5vw,2.6rem);line-height:1}
+  .countdown .lab{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-soft);margin-top:.5rem}
+  .rule{width:1px;height:60px;background:var(--line);margin:2.6rem auto 0}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:clamp(5rem,12vh,9rem) clamp(1.4rem,6vw,2rem)}
+  .wrap{max-width:900px;margin:0 auto}
+  .eyebrow{font-size:.72rem;letter-spacing:.38em;text-transform:uppercase;color:var(--green);margin-bottom:1.3rem;display:block}
+  h2{font-family:var(--display);font-weight:300;font-size:clamp(2rem,6vw,3.4rem);line-height:1.06;margin-bottom:1.6rem}
+  h2 em{font-style:italic;color:var(--green)}
+  p{color:var(--ink-soft);max-width:62ch;margin-bottom:1.1rem}
+  .center{text-align:center}
+  .center p{margin-left:auto;margin-right:auto}
+  .center .dots{margin-bottom:1.3rem}
+
+  /* story + percorso */
+  .story{background:var(--paper)}
+  .path{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem 1.8rem;margin-top:3rem;padding-top:2.2rem;border-top:1px dashed var(--line)}
+  .step{flex:0 0 auto;width:104px;text-align:center;position:relative}
+  .step .dot{width:13px;height:13px;border-radius:50%;background:var(--green);margin:0 auto .9rem;box-shadow:0 0 0 5px rgba(79,139,58,.14)}
+  .step:nth-child(even) .dot{background:var(--green-bright);box-shadow:0 0 0 5px rgba(111,174,73,.16)}
+  .step .yr{font-family:var(--display);font-size:1.15rem;color:var(--ink)}
+  .step .ev{font-size:.74rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:.25rem;line-height:1.4}
+
+  /* schedule */
+  .schedule{background:var(--paper-2)}
+  .timeline{margin-top:2.5rem;border-top:1px solid var(--line)}
+  .timeline .row{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .timeline .t{font-family:var(--display);font-size:1.5rem;color:var(--green)}
+  .timeline .e{font-size:1.05rem;color:var(--ink)}
+  .timeline .e span{display:block;font-size:.85rem;color:var(--ink-soft);margin-top:.2rem}
+  @media(max-width:560px){.timeline .row{grid-template-columns:78px 1fr;gap:1rem}}
+
+  /* location */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:2.5rem}
+  @media(max-width:640px){.cols{grid-template-columns:1fr;gap:2rem}}
+  .card-loc h3{font-family:var(--display);font-weight:400;font-size:1.5rem;margin-bottom:.6rem}
+  .card-loc a.site{color:var(--green);text-decoration:none;border-bottom:1px solid var(--line);font-size:.92rem}
+  .card-loc a.site:hover{border-color:var(--green)}
+  .btn{display:inline-block;margin-top:1rem;padding:.85rem 1.8rem;border:1px solid var(--ink);border-radius:40px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:.3s}
+  .btn:hover{background:var(--ink);color:var(--paper)}
+
+  /* gift */
+  .gift{background:var(--ink);color:var(--paper);text-align:center}
+  .gift .eyebrow{color:var(--green-bright)}
+  .gift .dots span:nth-child(3){background:#fff;opacity:.5}
+  .gift h2{color:var(--paper)}
+  .gift p{color:#cdd2c6;margin-left:auto;margin-right:auto}
+  .iban-card{max-width:520px;margin:2.6rem auto 0;padding:2.4rem;border:1px solid rgba(255,255,255,.18);border-radius:6px;background:rgba(255,255,255,.03)}
+  .iban-card .lbl{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:#9caa97;margin-bottom:.4rem}
+  .iban-card .val{font-family:var(--display);font-size:1.32rem;letter-spacing:.04em;word-break:break-word;margin-bottom:1.6rem}
+  .iban-card .val:last-child{margin-bottom:0}
+
+  /* rsvp */
+  .rsvp{background:var(--paper);text-align:center}
+  .embed{max-width:640px;margin:2.6rem auto 0;min-height:240px;border:1px dashed var(--line);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2.5rem;color:var(--ink-soft)}
+  .embed .note{font-size:.85rem;max-width:42ch}
+
+  /* footer */
+  footer{background:var(--paper-2);text-align:center;padding:4rem 1.5rem;border-top:1px solid var(--line)}
+  footer .names-sm{font-family:var(--display);font-style:italic;font-size:1.8rem}
+  footer .d{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:.8rem}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+  .delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">A.S &amp; L</span>
+  <ul class="links">
+    <li><a href="#storia">Storia</a></li>
+    <li><a href="#giorno">Il Giorno</a></li>
+    <li><a href="#dove">Dove</a></li>
+    <li><a href="#ospitalita">Ospitalità</a></li><li><a href="#lista">Lista Nozze</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="overline reveal">Ci sposiamo</div>
+  <h1 class="names reveal delay-1">Anna Sofia<span class="amp">&amp;</span>Leonardo</h1>
+  <div class="meta reveal delay-2">6 Dicembre 2026 — Marsciano · Assisi</div>
+  <div class="tema reveal delay-2"><small>Il nostro tema</small>Il gioco, in tutte le sue forme</div>
+  <div class="countdown reveal delay-3" id="cd">
+    <div><div class="num" id="dd">—</div><div class="lab">Giorni</div></div>
+    <div><div class="num" id="hh">—</div><div class="lab">Ore</div></div>
+    <div><div class="num" id="mm">—</div><div class="lab">Minuti</div></div>
+    <div><div class="num" id="ss">—</div><div class="lab">Secondi</div></div>
+  </div>
+  <div class="rule reveal delay-3"></div>
+</header>
+
+<section class="story" id="storia">
+  <div class="wrap center">
+    <span class="dots reveal"><span></span><span></span><span></span></span>
+    <span class="eyebrow reveal">La nostra storia</span>
+    <h2 class="reveal">Una mossa dopo l'altra, <em>fino a qui</em></h2>
+    <p class="reveal">Veniamo entrambi da Marsciano, ma è stato lontano da casa — a Torino, nel 2014 — che ci siamo trovati. Da lì, una mossa dopo l'altra, siamo arrivati fin qui: prima in due, oggi in quattro.</p>
+    <div class="path">
+      <div class="step reveal"><div class="dot"></div><div class="yr">2014</div><div class="ev">Torino, ci conosciamo</div></div>
+      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">Londra</div><div class="ev">l'amore sboccia</div></div>
+      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">Monte Cucco</div><div class="ev">primo appuntamento</div></div>
+      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">2018</div><div class="ev">Messico insieme</div></div>
+      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">2019</div><div class="ev">casa a Milano</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2023</div><div class="ev">arriva Fulvio</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2025</div><div class="ev">arriva Alba</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2026</div><div class="ev">…il nostro sì</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="schedule" id="giorno">
+  <div class="wrap">
+    <span class="eyebrow reveal">Il programma</span>
+    <h2 class="reveal">Il <em>giorno</em></h2>
+    <div class="timeline">
+      <div class="row reveal"><div class="t">10:30</div><div class="e">Rito civile<span>Comune di Marsciano (PG)</span></div></div>
+      <div class="row reveal"><div class="t">12:30</div><div class="e">Aperitivo<span>Valle di Assisi</span></div></div>
+      <div class="row reveal"><div class="t">13:30</div><div class="e">Pranzo<span>Insieme, con calma</span></div></div>
+      <div class="row reveal"><div class="t">17:00</div><div class="e">Torta &amp; festa<span>Si gioca e si balla fino a sera</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="dove">
+  <div class="wrap">
+    <span class="eyebrow reveal">Dove</span>
+    <h2 class="reveal">Come <em>arrivare</em></h2>
+    <p class="reveal">Due tappe nella stessa giornata: il rito a Marsciano e la festa alla Valle di Assisi.</p>
+    <div class="cols">
+      <div class="card-loc reveal">
+        <h3>Il rito</h3>
+        <p>Comune di Marsciano<br>Marsciano (PG)</p>
+        <a class="btn" href="https://share.google/RuklbIgBoiaKXa9jv" target="_blank" rel="noopener">Apri la mappa</a>
+      </div>
+      <div class="card-loc reveal delay-1">
+        <h3>Il ricevimento</h3>
+        <p>Valle di Assisi<br>Assisi (PG)<br><a class="site" href="https://www.vallediassisi.com/eventi" target="_blank" rel="noopener">vallediassisi.com</a></p>
+        <a class="btn" href="https://maps.app.goo.gl/xpTMVf9Cgj9B224q8" target="_blank" rel="noopener">Apri la mappa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="location" id="ospitalita" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Ospitalità</span>
+    <h2 class="reveal">Dove <em>dormire</em></h2>
+    <p class="reveal">Per chi arriva da lontano, stiamo raccogliendo alcune strutture consigliate nei dintorni di Assisi. Torna a visitare questa pagina nei prossimi mesi per trovare convenzioni, hotel e B&B suggeriti.</p>
+    <div class="cols">
+      <div class="card-loc reveal">
+        <h3>Vicino alla festa</h3>
+        <p>Hotel e agriturismi nelle vicinanze della Valle di Assisi.</p>
+      </div>
+      <div class="card-loc reveal delay-1">
+        <h3>Serve una mano?</h3>
+        <p>Se hai esigenze particolari per pernottamento o spostamenti, contattaci e faremo il possibile per aiutarti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gift" id="lista">
+  <div class="wrap center">
+    <span class="dots reveal"><span></span><span></span><span></span></span>
+    <span class="eyebrow reveal">Lista nozze</span>
+    <h2 class="reveal">Il regalo più bello <em>è la vostra presenza</em></h2>
+    <p class="reveal">Per chi desiderasse contribuire al nostro prossimo viaggio, può trovare qui sotto i riferimenti. Ma esserci, per noi, è già il regalo più grande.</p>
+    <details class="iban-card reveal delay-1"><summary style="cursor:pointer;font-family:var(--display);font-size:1.2rem">Mostra i riferimenti</summary><div style="margin-top:1.5rem">
+      <div class="lbl">Intestatari</div>
+      <div class="val">Piccioni Leonardo · Tascini Anna Sofia</div>
+      <div class="lbl">IBAN</div>
+      <div class="val">IT02 S084 5301 6010 0000 0263 224</div>
+      <div class="lbl">Causale</div>
+      <div class="val">Regalo di nozze A.S. &amp; L.</div>
+    </div></details>
+  </div>
+</section> id="rsvp">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Conferma la tua presenza</span>
+    <h2 class="reveal">Ci <em>sarai?</em></h2>
+    <p class="reveal">Vi chiediamo gentilmente di confermare entro il 1 Novembre 2026. Nel modulo potrete indicarci anche eventuali allergie, intolleranze o esigenze particolari. E mi raccomando: venite pronti a giocare.</p>
+    <div class="embed reveal delay-1" style="border:none;padding:0;min-height:auto;background:transparent">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTQ0zexKrO16nncIp_0XDOCWJ57kT4s6nWsykgQrHNTbTZsg/viewform?embedded=true"
+              width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0"
+              style="border-radius:6px;border:1px dashed var(--line)">Caricamento…</iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="names-sm">Anna Sofia &amp; Leonardo</div>
+  <div class="d">06 · 12 · 2026 — Con amore, e un po' di gioco</div>
+</footer>
+
+<script>
+  // ----- Data del matrimonio: 6 Dicembre 2026, 10:30 (mese 0-11 -> 11 = dicembre) -----
+  var wedding = new Date(2026, 11, 6, 10, 30, 0);
+  function g(id){return document.getElementById(id);}
+  function tick(){
+    var diff = wedding - new Date();
+    if(diff <= 0){ g('cd').innerHTML = '<div><div class="num">È il nostro giorno</div></div>'; return; }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor(diff%86400000/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    g('dd').textContent = d;
+    g('hh').textContent = String(h).padStart(2,'0');
+    g('mm').textContent = String(m).padStart(2,'0');
+    g('ss').textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+
+  // ----- Reveal on scroll -----
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  window.addEventListener('load',function(){
+    document.querySelectorAll('header .reveal').forEach(function(el){el.classList.add('in');});
+  });
+</script>
+</body>
+</html>
