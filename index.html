@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<!-- Versione corretta: parcheggi Marsciano, ricevimento Santa Maria degli Angeli, ospitalità Marsciano-first -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anna Sofia & Leonardo — Ci sposiamo</title>
+<title>Anna Sofia &amp; Leonardo — Ci sposiamo</title>
+<meta name="description" content="Anna Sofia e Leonardo si sposano il 6 dicembre 2026: programma, mappe, RSVP, ospitalità e informazioni pratiche.">
+<meta name="theme-color" content="#F3F1E6">
+<meta property="og:title" content="Anna Sofia &amp; Leonardo — Ci sposiamo">
+<meta property="og:description" content="6 dicembre 2026 · Marsciano e Santa Maria degli Angeli. Tutte le informazioni utili per festeggiare con noi.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://annasofiaeleonardo.it/">
+<meta property="og:image" content="https://annasofiaeleonardo.it/noi-quattro.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F3F1E6;
-    --paper-2:#E8E7D5;
-    --ink:#1B3326;
-    --ink-soft:#566355;
-    --green:#4F8B3A;
-    --green-bright:#6FAE49;
-    --line:#D2CFBA;
+    --paper:#F0F4F7;
+    --paper-2:#E2EAF2;
+    --ink:#0D1D30;
+    --ink-soft:#3D5468;
+    --green:#1D5FA0;
+    --green-bright:#3C8CD4;
+    --line:#C2CDD9;
+    --radius:18px;
+    --radius-sm:10px;
+    --shadow:0 18px 55px rgba(27,51,38,.14);
     --display:'Fraunces',Georgia,serif;
     --body:'Jost',system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
   ::selection{background:var(--green);color:var(--paper)}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--green-bright);outline-offset:4px;border-radius:6px}
 
   /* dots */
   .dots{display:inline-flex;gap:6px;align-items:center;justify-content:center}
@@ -88,6 +100,10 @@
   .countdown .num{font-family:var(--display);font-size:clamp(1.6rem,5vw,2.6rem);line-height:1}
   .countdown .lab{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-soft);margin-top:.5rem}
   .rule{width:1px;height:60px;background:var(--line);margin:2.6rem auto 0}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;justify-content:center;margin-top:2rem}
+  .hero-actions .btn,.rsvp-actions .btn{margin-top:0}
+  .hero-note{margin:.9rem auto 0;font-size:.82rem;color:var(--ink-soft);letter-spacing:.04em}
+  @media(max-width:560px){.countdown{flex-wrap:wrap;gap:1.2rem 1.8rem}.countdown>div{min-width:72px}.hero-actions{flex-direction:column}.hero-actions .btn{width:min(100%,280px)}}
 
   /* SECTIONS */
   section{padding:clamp(5rem,12vh,9rem) clamp(1.4rem,6vw,2rem)}
@@ -106,8 +122,8 @@
   /* family photo */
   .photo-wrap{max-width:600px;margin:2.8rem auto 0;text-align:center}
   .photo-wrap img{
-    width:100%;border-radius:12px;display:block;
-    box-shadow:0 12px 48px rgba(27,51,38,.14);
+    width:100%;border-radius:var(--radius-sm);display:block;
+    box-shadow:var(--shadow);
     object-fit:cover;
   }
   .photo-wrap figcaption{
@@ -138,8 +154,20 @@
   .card-loc h3{font-family:var(--display);font-weight:400;font-size:1.5rem;margin-bottom:.6rem}
   .card-loc a.site{color:var(--green);text-decoration:none;border-bottom:1px solid var(--line);font-size:.92rem}
   .card-loc a.site:hover{border-color:var(--green)}
-  .btn{display:inline-block;margin-top:1rem;padding:.85rem 1.8rem;border:1px solid var(--ink);border-radius:40px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:.3s}
-  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;padding:.85rem 1.8rem;border:1px solid var(--ink);border-radius:40px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease}
+  .btn:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px)}
+  .btn.primary{background:var(--green);border-color:var(--green);color:var(--paper);box-shadow:0 10px 26px rgba(79,139,58,.22)}
+  .btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.small{padding:.65rem 1rem;font-size:.58rem;letter-spacing:.16em;margin-top:0}
+  .mini-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+  .info-card{padding:1.45rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(255,255,255,.22)}
+  .info-card h3{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:.45rem 0 .45rem;color:var(--ink)}
+  .info-card p{font-size:.92rem;margin-bottom:0}
+  .tag{display:inline-block;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green);font-weight:500}
+  .note-card{margin-top:1.3rem;padding:1.3rem 1.45rem;border-left:3px solid var(--green);background:rgba(255,255,255,.28);border-radius:0 var(--radius-sm) var(--radius-sm) 0;color:var(--ink-soft)}
+  .note-card strong{color:var(--ink);font-weight:500}
+  @media(max-width:760px){.info-grid{grid-template-columns:1fr}}
 
   /* gift */
   .gift{background:var(--ink);color:var(--paper);text-align:center}
@@ -156,8 +184,9 @@
 
   /* rsvp */
   .rsvp{background:var(--paper);text-align:center}
-  .embed{max-width:680px;margin:2.6rem auto 0}
-  .embed iframe{width:100%;border-radius:8px;border:1px dashed var(--line);display:block}
+  .rsvp-actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;justify-content:center;margin-top:1.4rem}
+  .embed{max-width:680px;margin:2.2rem auto 0}
+  .embed iframe{width:100%;border-radius:8px;border:1px dashed var(--line);display:block;background:#fff}
 
   /* footer */
   footer{background:var(--paper-2);text-align:center;padding:4rem 1.5rem;border-top:1px solid var(--line)}
@@ -168,31 +197,36 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
   .reveal.in{opacity:1;transform:none}
   .delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    *{animation:none!important}
+  }
 </style>
 </head>
 <body>
 
 <!-- Mobile fullscreen nav -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#storia" onclick="closeMenu()">Storia</a>
-  <a href="#dove" onclick="closeMenu()">Dove</a>
   <a href="#giorno" onclick="closeMenu()">Il Giorno</a>
+  <a href="#dove" onclick="closeMenu()">Dove</a>
   <a href="#rsvp" onclick="closeMenu()">RSVP</a>
   <a href="#ospitalita" onclick="closeMenu()">Ospitalità</a>
+  <a href="#storia" onclick="closeMenu()">Storia</a>
   <a href="#lista" onclick="closeMenu()">Lista Nozze</a>
 </div>
 
 <nav>
-  <span class="brand">A.S &amp; L</span>
+  <span class="brand">A S &amp; L</span>
   <ul class="links">
-    <li><a href="#storia">Storia</a></li>
     <li><a href="#dove">Dove</a></li>
     <li><a href="#giorno">Il Giorno</a></li>
     <li><a href="#rsvp">RSVP</a></li>
     <li><a href="#ospitalita">Ospitalità</a></li>
+    <li><a href="#storia">Storia</a></li>
     <li><a href="#lista">Lista Nozze</a></li>
   </ul>
-  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Apri menu">
+  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Apri menu" aria-controls="mobileNav" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -200,7 +234,7 @@
 <header>
   <div class="overline reveal">Ci sposiamo</div>
   <h1 class="names reveal delay-1">Anna Sofia<span class="amp">&amp;</span>Leonardo</h1>
-  <div class="meta reveal delay-2">6 Dicembre 2026 — Marsciano · Assisi</div>
+  <div class="meta reveal delay-2">6 Dicembre 2026 — Marsciano · Santa Maria degli Angeli</div>
   <div class="tema reveal delay-2">
     <small>La nostra storia</small>Una mossa dopo l'altra
   </div>
@@ -210,41 +244,22 @@
     <div><div class="num" id="mm">—</div><div class="lab">Minuti</div></div>
     <div><div class="num" id="ss">—</div><div class="lab">Secondi</div></div>
   </div>
+  <div class="hero-actions reveal delay-3">
+    <a class="btn primary" href="#rsvp">Conferma presenza</a>
+    <a class="btn" href="#giorno">Vedi il programma</a>
+  </div>
+  <p class="hero-note reveal delay-3">RSVP entro il 1 Novembre 2026 · indicaci anche esigenze alimentari e ospitalità</p>
   <div class="rule reveal delay-3"></div>
 </header>
 
-<!-- 1. STORIA -->
-<section class="story" id="storia">
-  <div class="wrap center">
-    <span class="dots reveal"><span></span><span></span><span></span></span>
-    <span class="eyebrow reveal">La nostra storia</span>
-    <h2 class="reveal">Una mossa dopo l'altra, <em>fino a qui</em></h2>
-    <p class="reveal">Veniamo entrambi da Marsciano, ma è stato lontano da casa — a Torino, nel 2014 — che ci siamo trovati. Da lì, una mossa dopo l'altra, siamo arrivati fin qui: prima in due, oggi in quattro.</p>
 
-    <figure class="photo-wrap reveal delay-1">
-      <img src="noi-quattro.jpg" alt="Anna Sofia, Leonardo, Fulvio e Alba">
-      <figcaption>Noi quattro</figcaption>
-    </figure>
 
-    <div class="path">
-      <div class="step reveal"><div class="dot"></div><div class="yr">2014</div><div class="ev">Ci conosciamo a Torino</div></div>
-      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">2018</div><div class="ev">Sboccia l'amore a Londra</div></div>
-      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">Monte Cucco</div><div class="ev">Primo appuntamento</div></div>
-      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">Messico</div><div class="ev">Primo viaggio insieme</div></div>
-      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">2019</div><div class="ev">Insieme a Milano</div></div>
-      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2023</div><div class="ev">Arriva Fulvio</div></div>
-      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2025</div><div class="ev">Arriva Alba</div></div>
-      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">2026</div><div class="ev">Il nostro sì</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 2. DOVE -->
+<!-- 1. DOVE -->
 <section class="location" id="dove">
   <div class="wrap">
     <span class="eyebrow reveal">Dove</span>
     <h2 class="reveal">Come <em>arrivare</em></h2>
-    <p class="reveal">Due tappe nella stessa giornata: il rito a Marsciano e la festa alla Valle di Assisi.</p>
+    <p class="reveal">Due tappe nella stessa giornata: il rito a Marsciano e la festa alla Valle di Assisi, a Santa Maria degli Angeli. Qui trovi mappe, parcheggi e indicazioni pratiche per organizzarti.</p>
     <div class="cols">
       <div class="card-loc reveal">
         <h3>Il rito</h3>
@@ -253,56 +268,117 @@
       </div>
       <div class="card-loc reveal delay-1">
         <h3>Il ricevimento</h3>
-        <p>Valle di Assisi<br>Assisi (PG)<br><a class="site" href="https://www.vallediassisi.com/eventi" target="_blank" rel="noopener">vallediassisi.com</a></p>
+        <p>Valle di Assisi<br>Santa Maria degli Angeli (PG)<br><a class="site" href="https://www.vallediassisi.com/eventi" target="_blank" rel="noopener">vallediassisi.com</a></p>
         <a class="btn" href="https://maps.app.goo.gl/xpTMVf9Cgj9B224q8" target="_blank" rel="noopener">Apri la mappa</a>
       </div>
+    </div>
+    <div class="info-grid" aria-label="Informazioni pratiche per arrivi e spostamenti">
+      <article class="info-card reveal">
+        <span class="tag">Parcheggio</span>
+        <h3>Dove lasciare l'auto</h3>
+        <p>Non serve arrivare troppo in anticipo: prevedi solo qualche minuto per parcheggiare. I parcheggi più comodi sono il Parcheggio ascensore e Piazza Carlo Marx; ci sono posti anche lungo la strada, ma è più difficile trovarne.</p>
+        <div class="mini-actions">
+          <a class="btn small" href="https://maps.app.goo.gl/B8W9z7SGHdT9z21L7" target="_blank" rel="noopener">Parcheggio ascensore</a>
+          <a class="btn small" href="https://maps.app.goo.gl/9bggAdkbNp8gExkd9" target="_blank" rel="noopener">Piazza Carlo Marx</a>
+        </div>
+      </article>
+      <article class="info-card reveal delay-1">
+        <span class="tag">Spostamento</span>
+        <h3>Verso il ricevimento</h3>
+        <p>Dopo il rito ci sposteremo in auto verso la Valle di Assisi, a Santa Maria degli Angeli. Da Marsciano ci vogliono circa 30 minuti.</p>
+      </article>
+      <article class="info-card reveal delay-2">
+        <span class="tag">Passaggi</span>
+        <h3>Serve una mano?</h3>
+        <p>Se hai bisogno di un passaggio, o se arrivi in treno, segnalacelo nel modulo RSVP: proveremo a organizzare gli spostamenti insieme.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- 3. IL GIORNO -->
+<!-- 2. IL GIORNO -->
 <section class="schedule" id="giorno">
   <div class="wrap">
     <span class="eyebrow reveal">Il programma</span>
     <h2 class="reveal">Il <em>giorno</em></h2>
     <div class="timeline">
       <div class="row reveal"><div class="t">10:30</div><div class="e">Rito civile<span>Comune di Marsciano (PG)</span></div></div>
-      <div class="row reveal"><div class="t">12:30</div><div class="e">Aperitivo<span>Valle di Assisi</span></div></div>
-      <div class="row reveal"><div class="t">13:30</div><div class="e">Pranzo<span>Insieme, con calma</span></div></div>
-      <div class="row reveal"><div class="t">17:00</div><div class="e">Torta &amp; festa<span>Si gioca e si balla fino a sera</span></div></div>
+      <div class="row reveal"><div class="t">12:30</div><div class="e">Aperitivo e pranzo<span>Valle di Assisi</span></div></div>
+      <div class="row reveal"><div class="t">17:00</div><div class="e">Torta &amp; festa<span>Si gioca e si balla fino a sera</span></div></div>    </div>
     </div>
-  </div>
 </section>
 
-<!-- 4. RSVP -->
+<!-- 3. RSVP -->
 <section class="rsvp" id="rsvp">
   <div class="wrap center">
     <span class="eyebrow reveal">Conferma la tua presenza</span>
     <h2 class="reveal">Ci <em>sarai?</em></h2>
-    <p class="reveal">Vi chiediamo gentilmente di confermare entro il 1 Novembre 2026. Nel modulo potrete indicarci anche eventuali allergie, intolleranze o esigenze particolari. E mi raccomando: venite pronti a giocare.</p>
+    <p class="reveal">Vi chiediamo gentilmente di confermare entro il 1 Novembre 2026. Nel modulo potrete indicarci anche eventuali allergie, intolleranze, esigenze particolari, richieste di ospitalità o bisogno di passaggi. E mi raccomando: venite pronti a giocare.</p>
+    <div class="rsvp-actions reveal delay-1">
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfTQ0zexKrO16nncIp_0XDOCWJ57kT4s6nWsykgQrHNTbTZsg/viewform" target="_blank" rel="noopener">Apri il modulo RSVP</a>
+      <a class="btn" href="#ospitalita">Info ospitalità</a>
+    </div>
     <div class="embed reveal delay-1">
       <iframe
+        title="Modulo RSVP per il matrimonio di Anna Sofia e Leonardo"
         src="https://docs.google.com/forms/d/e/1FAIpQLSfTQ0zexKrO16nncIp_0XDOCWJ57kT4s6nWsykgQrHNTbTZsg/viewform?embedded=true"
-        height="920" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+        height="920" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Caricamento…</iframe>
     </div>
   </div>
 </section>
 
-<!-- 5. OSPITALITÀ -->
+<!-- 4. OSPITALITÀ -->
 <section class="location" id="ospitalita" style="background:var(--paper-2)">
   <div class="wrap">
     <span class="eyebrow reveal">Ospitalità</span>
     <h2 class="reveal">Dove <em>dormire</em></h2>
-    <p class="reveal">Per chi arriva da lontano, stiamo raccogliendo alcune strutture consigliate nei dintorni di Assisi. Noi offriamo volentieri l'ospitalità per le notti del 5 e del 6 dicembre. Segnalatecelo nel modulo RSVP, così ci organizziamo insieme. Torna a visitare questa pagina nei prossimi mesi per trovare maggiori informazioni.</p>
-    <div class="cols">
-      <div class="card-loc reveal">
-        <h3>Vicino alla festa</h3>
-        <p>Hotel e agriturismi nelle vicinanze della Valle di Assisi.</p>
-      </div>
-      <div class="card-loc reveal delay-1">
-        <h3>Serve una mano?</h3>
-        <p>Se hai esigenze particolari per pernottamento o spostamenti, contattaci e faremo il possibile per aiutarti.</p>
-      </div>
+    <p class="reveal">Per chi arriva da lontano, noi offriamo volentieri l'ospitalità per le notti del 5 e del 6 dicembre. Segnalatecelo nel modulo RSVP, così ci organizziamo insieme. Se vuoi prenotare in autonomia o fermarti altri giorni, queste sono le zone più comode.</p>
+    <div class="info-grid">
+      <article class="info-card reveal">
+        <span class="tag">Prima opzione</span>
+        <h3>Marsciano</h3>
+        <p>È la zona in cui organizzeremo l'ospitalità per chi arriva da lontano. Vicino al rito civile e alle nostre famiglie.</p>
+      </article>
+      <article class="info-card reveal delay-1">
+        <span class="tag">Vicino alla festa</span>
+        <h3>Santa Maria degli Angeli</h3>
+        <p>Comoda se preferisci prenotare in autonomia e restare vicino alla Valle di Assisi, soprattutto se ti fermi più giorni.</p>
+      </article>
+      <article class="info-card reveal delay-2">
+        <span class="tag">Alternativa</span>
+        <h3>Perugia e dintorni</h3>
+        <p>Può essere utile se arrivi in treno/aereo.</p>
+      </article>
+    </div>
+    <div class="note-card reveal delay-2"><strong>Serve una mano?</strong> Se hai esigenze particolari per pernottamento o spostamenti, indicacelo nell'RSVP e faremo il possibile per aiutarvi a organizzarvi.</div>
+  </div>
+</section>
+
+<!-- 5. STORIA -->
+<section class="story" id="storia">
+  <div class="wrap center">
+    <span class="dots reveal"><span></span><span></span><span></span></span>
+    <span class="eyebrow reveal">La nostra storia</span>
+    <h2 class="reveal">Una mossa dopo l'altra, <em>fino a qui</em></h2>
+    <p class="reveal">Veniamo entrambi da Marsciano, ma è stato lontano da casa — a Torino, nel 2014 — che ci siamo trovati. Da lì, una mossa dopo l'altra, siamo arrivati fin qui: prima in due, oggi in quattro.</p>
+
+    <figure class="photo-wrap reveal delay-1">
+      <picture>
+        <source srcset="noi-quattro-800.webp 800w, noi-quattro-1200.webp 1200w" sizes="(max-width: 680px) 92vw, 600px" type="image/webp">
+        <img src="noi-quattro.jpg" alt="Foto di famiglia di Anna Sofia e Leonardo" width="600" height="450" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>Noi quattro</figcaption>
+    </figure>
+
+    <div class="path">
+      <div class="step reveal"><div class="dot"></div><div class="yr">Torino</div><div class="ev">Ci conosciamo nel 2014</div></div>
+      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">Londra</div><div class="ev">Sboccia l'amore nel 2018</div></div>
+      <div class="step reveal delay-1"><div class="dot"></div><div class="yr">Monte Cucco</div><div class="ev">Primo appuntamento</div></div>
+      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">Messico</div><div class="ev">Primo viaggio insieme</div></div>
+      <div class="step reveal delay-2"><div class="dot"></div><div class="yr">Milano</div><div class="ev">Andiamo a vivere insieme nel 2019</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">Fulvio</div><div class="ev">Il nostro primo figlio</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">Alba</div><div class="ev">La famiglia cresce</div></div>
+      <div class="step reveal delay-3"><div class="dot"></div><div class="yr">Il nostro sì</div><div class="ev">Vi aspettiamo!</div></div>
     </div>
   </div>
 </section>
@@ -320,9 +396,7 @@
         <div class="lbl">Intestatari</div>
         <div class="val">Piccioni Leonardo · Tascini Anna Sofia</div>
         <div class="lbl">IBAN</div>
-        <div class="val">IT02 S084 5301 6010 0000 0263 224</div>
-        <div class="lbl">Causale</div>
-        <div class="val">Regalo di nozze A.S. &amp; L.</div>
+        <div class="val">IT02S0845301601000000263224</div>
       </div>
     </details>
   </div>
@@ -335,7 +409,8 @@
 
 <script>
   // countdown
-  var wedding = new Date(2026,11,6,10,30,0);
+  // Orario fissato al fuso italiano: 6 dicembre 2026, 10:30 CET
+  var wedding = new Date('2026-12-06T10:30:00+01:00');
   function g(id){return document.getElementById(id);}
   function tick(){
     var diff=wedding-new Date();
@@ -352,10 +427,14 @@
   tick();setInterval(tick,1000);
 
   // reveal on scroll
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
   window.addEventListener('load',function(){
     document.querySelectorAll('header .reveal').forEach(function(el){el.classList.add('in');});
   });
@@ -366,11 +445,14 @@
     var m=document.getElementById('mobileNav');
     b.classList.toggle('open');
     m.classList.toggle('open');
+    b.setAttribute('aria-expanded',m.classList.contains('open')?'true':'false');
     document.body.style.overflow=m.classList.contains('open')?'hidden':'';
   }
   function closeMenu(){
-    document.getElementById('burger').classList.remove('open');
+    var b=document.getElementById('burger');
     document.getElementById('mobileNav').classList.remove('open');
+    b.classList.remove('open');
+    b.setAttribute('aria-expanded','false');
     document.body.style.overflow='';
   }
 </script>
