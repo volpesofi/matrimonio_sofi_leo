@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<!-- Versione corretta: parcheggi Marsciano, ricevimento Santa Maria degli Angeli, ospitalità Marsciano-first -->
+<!-- Versione inverno: palette bosco, neve e champagne -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anna Sofia &amp; Leonardo — Ci sposiamo</title>
 <meta name="description" content="Anna Sofia e Leonardo si sposano il 6 dicembre 2026: programma, mappe, RSVP, ospitalità e informazioni pratiche.">
-<meta name="theme-color" content="#F3F1E6">
+<meta name="theme-color" content="#F7F3EA">
 <meta property="og:title" content="Anna Sofia &amp; Leonardo — Ci sposiamo">
 <meta property="og:description" content="6 dicembre 2026 · Marsciano e Santa Maria degli Angeli. Tutte le informazioni utili per festeggiare con noi.">
 <meta property="og:type" content="website">
@@ -17,16 +17,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F0F4F7;
-    --paper-2:#E2EAF2;
-    --ink:#0D1D30;
-    --ink-soft:#3D5468;
-    --green:#1D5FA0;
-    --green-bright:#3C8CD4;
-    --line:#C2CDD9;
+    /* Palette inverno: neve calda, bosco e tocchi champagne */
+    --paper:#F7F3EA;
+    --paper-2:#E7E5DC;
+    --ink:#172D2B;
+    --ink-soft:#5F6662;
+    --green:#3F6658;
+    --green-bright:#B79A67;
+    --line:#CEC8BA;
     --radius:18px;
     --radius-sm:10px;
-    --shadow:0 18px 55px rgba(27,51,38,.14);
+    --shadow:0 18px 55px rgba(23,45,43,.16);
     --display:'Fraunces',Georgia,serif;
     --body:'Jost',system-ui,sans-serif;
   }
@@ -87,7 +88,10 @@
   header{
     min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
     text-align:center;padding:6rem 1.5rem 3rem;position:relative;
-    background:radial-gradient(120% 80% at 50% -10%, var(--paper-2), transparent 60%),var(--paper);
+    background:
+      radial-gradient(90% 70% at 50% -10%, rgba(183,154,103,.22), transparent 55%),
+      radial-gradient(120% 80% at 50% 0%, var(--paper-2), transparent 68%),
+      var(--paper);
   }
   .overline{font-size:.78rem;letter-spacing:.45em;text-transform:uppercase;color:var(--green);margin-bottom:2rem}
   .names{font-family:var(--display);font-weight:300;font-size:clamp(2.9rem,11vw,8.4rem);line-height:.94;letter-spacing:-.01em}
@@ -134,8 +138,8 @@
   /* path timeline */
   .path{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem 1.8rem;margin-top:3rem;padding-top:2.2rem;border-top:1px dashed var(--line)}
   .step{flex:0 0 auto;width:104px;text-align:center;position:relative}
-  .step .dot{width:13px;height:13px;border-radius:50%;background:var(--green);margin:0 auto .9rem;box-shadow:0 0 0 5px rgba(79,139,58,.14)}
-  .step:nth-child(even) .dot{background:var(--green-bright);box-shadow:0 0 0 5px rgba(111,174,73,.16)}
+  .step .dot{width:13px;height:13px;border-radius:50%;background:var(--green);margin:0 auto .9rem;box-shadow:0 0 0 5px rgba(63,102,88,.18)}
+  .step:nth-child(even) .dot{background:var(--green-bright);box-shadow:0 0 0 5px rgba(183,154,103,.20)}
   .step .yr{font-family:var(--display);font-size:1.15rem;color:var(--ink)}
   .step .ev{font-size:.74rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:.25rem;line-height:1.4}
 
@@ -156,30 +160,30 @@
   .card-loc a.site:hover{border-color:var(--green)}
   .btn{display:inline-flex;align-items:center;justify-content:center;margin-top:1rem;padding:.85rem 1.8rem;border:1px solid var(--ink);border-radius:40px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease}
   .btn:hover{background:var(--ink);color:var(--paper);transform:translateY(-1px)}
-  .btn.primary{background:var(--green);border-color:var(--green);color:var(--paper);box-shadow:0 10px 26px rgba(79,139,58,.22)}
+  .btn.primary{background:var(--green);border-color:var(--green);color:var(--paper);box-shadow:0 10px 26px rgba(63,102,88,.24)}
   .btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
   .btn.small{padding:.65rem 1rem;font-size:.58rem;letter-spacing:.16em;margin-top:0}
   .mini-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
   .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
-  .info-card{padding:1.45rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(255,255,255,.22)}
+  .info-card{padding:1.45rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(255,255,255,.34);box-shadow:0 10px 30px rgba(23,45,43,.05)}
   .info-card h3{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:.45rem 0 .45rem;color:var(--ink)}
   .info-card p{font-size:.92rem;margin-bottom:0}
-  .tag{display:inline-block;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green);font-weight:500}
-  .note-card{margin-top:1.3rem;padding:1.3rem 1.45rem;border-left:3px solid var(--green);background:rgba(255,255,255,.28);border-radius:0 var(--radius-sm) var(--radius-sm) 0;color:var(--ink-soft)}
+  .tag{display:inline-block;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green-bright);font-weight:500}
+  .note-card{margin-top:1.3rem;padding:1.3rem 1.45rem;border-left:3px solid var(--green-bright);background:rgba(255,255,255,.34);border-radius:0 var(--radius-sm) var(--radius-sm) 0;color:var(--ink-soft);box-shadow:0 10px 30px rgba(23,45,43,.04)}
   .note-card strong{color:var(--ink);font-weight:500}
   @media(max-width:760px){.info-grid{grid-template-columns:1fr}}
 
   /* gift */
-  .gift{background:var(--ink);color:var(--paper);text-align:center}
+  .gift{background:linear-gradient(135deg,#172D2B 0%,#243A37 58%,#1B3036 100%);color:var(--paper);text-align:center}
   .gift .eyebrow{color:var(--green-bright)}
   .gift .dots span:nth-child(3){background:#fff;opacity:.5}
   .gift h2{color:var(--paper)}
-  .gift p{color:#cdd2c6;margin-left:auto;margin-right:auto}
-  .iban-card{max-width:520px;margin:2.6rem auto 0;padding:2.4rem;border:1px solid rgba(255,255,255,.18);border-radius:6px;background:rgba(255,255,255,.03)}
+  .gift p{color:#D8D2C4;margin-left:auto;margin-right:auto}
+  .iban-card{max-width:520px;margin:2.6rem auto 0;padding:2.4rem;border:1px solid rgba(183,154,103,.36);border-radius:6px;background:rgba(255,255,255,.045)}
   .iban-card summary{cursor:pointer;font-family:var(--display);font-size:1.2rem;color:var(--paper);list-style:none;display:flex;align-items:center;justify-content:center;gap:.6rem}
   .iban-card summary::after{content:'↓';font-family:var(--body);font-size:.9rem;transition:transform .3s}
   .iban-card[open] summary::after{transform:rotate(180deg)}
-  .iban-card .lbl{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:#9caa97;margin-bottom:.4rem;margin-top:1.6rem}
+  .iban-card .lbl{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:#C6AD79;margin-bottom:.4rem;margin-top:1.6rem}
   .iban-card .val{font-family:var(--display);font-size:1.32rem;letter-spacing:.04em;word-break:break-word;color:var(--paper)}
 
   /* rsvp */
