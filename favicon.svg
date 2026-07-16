@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#FEECDC"/>
+  <!-- foglioline verdi -->
+  <path d="M30 19c-3-9-12-11-17-8 2 8 11 10 17 8z" fill="#80C192" stroke="#2F6B3C" stroke-width="1.6"/>
+  <path d="M34 19c3-9 12-11 17-8-2 8-11 10-17 8z" fill="#80C192" stroke="#2F6B3C" stroke-width="1.6"/>
+  <!-- cuore corallo -->
+  <path d="M32 55C12 42 10 25 22.5 21.5c5.5-1.5 9.5 3.5 9.5 7 0-3.5 4-8.5 9.5-7C54 25 52 42 32 55z" fill="#E47571" stroke="#B7444F" stroke-width="2"/>
+</svg>
